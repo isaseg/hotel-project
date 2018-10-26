@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <style>
+      div {
+        width: 250px;
+        height: 300px;
+        color: #317873;
+        background-color: #a0d6b4;
+      }
+      #rmOne {
+        margin-top: 3%;
+      }
+      #onePpl {
+        width: 125px;
+      }
+      #oneNum {
+        width: 50px;
+      }
+      #logo {
+        width: 50px;
+        height: 50px;
+        color: #317873;
+        font-size: 38px;
+      }
+      #title {
+        width: 200px;
+        height: 40px;
+        background-color: white;
+        color: #317873;
+        margin-left: 40%;
+        margin-right: 40%;
+        margin-top: -5%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="logo">SH</div>
+    <div id="title"><h1>Segawa Hotel</h1></div>
+    <div id="rmOne">
+      <h1>Room One</h1>
+      <input type="text" id="onePpl">
+      <button onclick="oneName()" id="oneAdd">Add Name</button>
+      <input type="number" id="oneNum">
+      <button onclick="onePer()">Remove Name</button>
+      <button onclick="oneAll()">Remove all</button>
+      <ol id="unoppl">
+      </ol>
+      <p id="onelock"></p>
+    </div>
+    <script>
+    var rmoneAmount = 0;
+    var oneAdd = document.getElementById('oneAdd').innerHTML;
+      function oneName() {
+        if (onePpl.value !== "" && rmoneAmount < 4) {
+        rmoneAmount = 0;
+        rmoneAmount++;
+        var oneppl = document.getElementById('onePpl').value;
+        document.getElementById('onePpl').value = "";
+        var ol = document.getElementsByTagName('ol')[0];
+        var newLi = document.createElement('li');
+        var newText = document.createTextNode(oneppl);
+        newLi.appendChild(newText);
+        ol.appendChild(newLi);
+        document.rmOne.appendChild(ol);
+        }
+        else if (onePpl.value !== "" && rmoneAmount > 3) {
+          window.alert("Room is full");
+        }
+      }
+      function onePer() {
+        var oneNum = document.getElementById('oneNum').value;
+        var getLi = document.getElementsByTagName('li')[oneNum - 1];
+        var getParent = getLi.parentNode;
+        getParent.removeChild(getLi);
+        rmoneAmount--;
+      }
+      function oneAll() {
+        for (var i = 3; i > 0; i--) {
+        var getLi = document.getElementById('unoppl');
+        var getParent = getLi.parentNode;
+        getParent.removeChild(getLi);
+      }}
+    </script>
+  </body>
+</html>
