@@ -1,6 +1,10 @@
 <html>
   <head>
     <style>
+      body {
+        background-image: url('http://www.starwoodhotelshawaii.com/images/main_img/sheratonkona-pool.jpg');
+        background-size: cover;
+      }
       div {
         width: 250px;
         height: 300px;
@@ -8,12 +12,63 @@
         background-color: #a0d6b4;
       }
       #rmOne {
-        margin-top: 3%;
+        margin-top: 0%;
+        margin-left: 5%;
+      }
+      #rmTwo {
+        margin-top: -23.8%;
+        margin-left: 40%;
+      }
+      #rmThree {
+        margin-top: -23.8%;
+        margin-left: 76%;
+      }
+      #rmFour {
+        margin-top: 0%;
+        margin-left: 5%;
+      }
+      #rmFive {
+        margin-top: -23.8%;
+        margin-left: 40%;
+      }
+      #rmSix {
+        margin-top: -23.8%;
+        margin-left: 76%;
       }
       #onePpl {
         width: 125px;
       }
+      #twoPpl {
+        width: 125px;
+      }
+      #threePpl {
+        width: 125px;
+      }
+      #fourPpl {
+        width: 125px;
+      }
+      #fivePpl {
+        width: 125px;
+      }
+      #sixPpl {
+        width: 125px;
+      }
       #oneNum {
+        width: 50px;
+      }
+      #twoNum {
+        width: 50px;
+      }
+      #threeNum {
+        width: 50px;
+      }
+      #fourNum {
+        width: 50px;
+      }
+      #fiveNum {
+        width: 50px;
+      }
+      #sixNum {
         width: 50px;
       }
       #logo {
@@ -23,9 +78,8 @@
         font-size: 38px;
       }
       #title {
-        width: 200px;
+        width: 187px;
         height: 40px;
-        background-color: white;
         color: #317873;
         margin-left: 40%;
         margin-right: 40%;
@@ -39,20 +93,91 @@
     <div id="rmOne">
       <h1>Room One</h1>
       <input type="text" id="onePpl">
-      <button onclick="oneName()" id="oneAdd">Add Name</button>
+      <button onclick="oneName()" id="oneName">Add Name</button>
       <input type="number" id="oneNum">
-      <button onclick="onePer()">Remove Name</button>
-      <button onclick="oneAll()">Remove all</button>
+      <button onclick="onePer()" id="onePer">Remove Name</button>
+      <button onclick="oneAll()" id="oneAll">Remove all</button>
+      <button onclick="oneLock()" id="oneLock">Lock Room</button>
+      <button onclick="oneUnlock()" id="oneUnlock">Unlock Room</button>
       <ol id="unoppl">
       </ol>
-      <p id="onelock"></p>
+      
+    </div>
+    <div id="rmTwo">
+      <h1>Room Two</h1>
+      <input type="text" id="twoPpl">
+      <button onclick="twoName()" id="twoName">Add Name</button>
+      <input type="number" id="twoNum">
+      <button onclick="twoPer()" id="twoPer">Remove Name</button>
+      <button onclick="twoAll()" id="twoAll">Remove all</button>
+      <button onclick="twoLock()" id="twoLock">Lock Room</button>
+      <button onclick="twoUnlock()" id="twoUnlock">Unlock Room</button>
+      <ol id="dosppl">
+      </ol>
+    </div>
+    <div id="rmThree">
+      <h1>Room Three</h1>
+      <input type="text" id="threePpl">
+      <button onclick="threeName()" id="threeName">Add Name</button>
+      <input type="number" id="threeNum">
+      <button onclick="threePer()" id="threePer">Remove Name</button>
+      <button onclick="threeAll()" id="threeAll">Remove all</button>
+      <button onclick="threeLock()" id="threeLock">Lock Room</button>
+      <button onclick="threeUnlock()" id="threeUnlock">Unlock Room</button>
+      <ol id="tresppl">
+      </ol>
+      
+    </div>
+    <div id="rmFour">
+      <h1>Room Four</h1>
+      <input type="text" id="fourPpl">
+      <button onclick="fourName()" id="fourName">Add Name</button>
+      <input type="number" id="fourNum">
+      <button onclick="fourPer()" id="fourPer">Remove Name</button>
+      <button onclick="fourAll()" id="fourAll">Remove all</button>
+      <button onclick="fourLock()" id="fourLock">Lock Room</button>
+      <button onclick="fourUnlock()" id="fourUnlock">Unlock Room</button>
+      <ol id="cuatroppl">
+      </ol>
+      
+    </div>
+    <div id="rmFive">
+      <h1>Room Five</h1>
+      <input type="text" id="fivePpl">
+      <button onclick="fiveName()" id="fiveName">Add Name</button>
+      <input type="number" id="fiveNum">
+      <button onclick="fivePer()" id="fivePer">Remove Name</button>
+      <button onclick="fiveAll()" id="fiveAll">Remove all</button>
+      <button onclick="fiveLock()" id="fiveLock">Lock Room</button>
+      <button onclick="fiveUnlock()" id="fiveUnlock">Unlock Room</button>
+      <ol id="cincoppl">
+      </ol>
+      
+    </div>
+    <div id="rmSix">
+      <h1>Room Six</h1>
+      <input type="text" id="sixPpl">
+      <button onclick="sixName()" id="sixName">Add Name</button>
+      <input type="number" id="sixNum">
+      <button onclick="sixPer()" id="sixPer">Remove Name</button>
+      <button onclick="sixAll()" id="sixAll">Remove all</button>
+      <button onclick="sixLock()" id="sixLock">Lock Room</button>
+      <button onclick="sixUnlock()" id="sixUnlock">Unlock Room</button>
+      <ol id="seisppl">
+      </ol>
+      
     </div>
     <script>
     var rmoneAmount = 0;
-    var oneAdd = document.getElementById('oneAdd').innerHTML;
+    var rmtwoAmount = 0;
+    var rmthreeAmount = 0;
+    var rmfourAmount = 0;
+    var rmfiveAmount = 0;
+    var rmsixAmount = 0;
+    var all = [];
+    
       function oneName() {
         if (onePpl.value !== "" && rmoneAmount < 4) {
-        rmoneAmount = 0;
         rmoneAmount++;
         var oneppl = document.getElementById('onePpl').value;
         document.getElementById('onePpl').value = "";
@@ -67,6 +192,7 @@
           window.alert("Room is full");
         }
       }
+      
       function onePer() {
         var oneNum = document.getElementById('oneNum').value;
         var getLi = document.getElementsByTagName('li')[oneNum - 1];
@@ -74,12 +200,274 @@
         getParent.removeChild(getLi);
         rmoneAmount--;
       }
+      
+      function oneLock() {
+        document.getElementById('onePpl').disabled = true;
+        document.getElementById('oneName').disabled = true;
+        document.getElementById('oneNum').disabled = true;
+        document.getElementById('onePer').disabled = true;
+        document.getElementById('oneAll').disabled = true;
+        document.getElementById('oneLock').disabled = true;
+      }
+      
+      function oneUnlock() {
+        document.getElementById('onePpl').disabled = false;
+        document.getElementById('oneName').disabled = false;
+        document.getElementById('oneNum').disabled = false;
+        document.getElementById('onePer').disabled = false;
+        document.getElementById('oneAll').disabled = false;
+        document.getElementById('oneLock').disabled = false;
+      }
+      
       function oneAll() {
-        for (var i = 3; i > 0; i--) {
-        var getLi = document.getElementById('unoppl');
+        document.getElementById('unoppl').innerHTML = "";
+        rmoneAmount = 0;
+      }
+      
+      function twoName() {
+        if (twoPpl.value !== "" && rmtwoAmount < 4) {
+        rmtwoAmount++;
+        var twoppl = document.getElementById('twoPpl').value;
+        document.getElementById('twoPpl').value = "";
+        var ol = document.getElementsByTagName('ol')[1];
+        var newLi = document.createElement('li');
+        var newText = document.createTextNode(twoppl);
+        newLi.appendChild(newText);
+        ol.appendChild(newLi);
+        document.rmTwo.appendChild(ol);
+        }
+        else if (twoPpl.value !== "" && rmtwoAmount > 3) {
+          window.alert("Room is full");
+        }
+      }
+      
+      function twoPer() {
+        var twoNum = document.getElementById('twoNum').value;
+        var twoAmnt = +rmoneAmount + +twoNum;
+        var getLi = document.getElementsByTagName('li')[twoAmnt - 1];
         var getParent = getLi.parentNode;
         getParent.removeChild(getLi);
-      }}
+        rmtwoAmount--;
+      }
+      
+      function twoLock() {
+        document.getElementById('twoPpl').disabled = true;
+        document.getElementById('twoName').disabled = true;
+        document.getElementById('twoNum').disabled = true;
+        document.getElementById('twoPer').disabled = true;
+        document.getElementById('twoAll').disabled = true;
+        document.getElementById('twoLock').disabled = true;
+      }
+      
+      function twoUnlock() {
+        document.getElementById('twoPpl').disabled = false;
+        document.getElementById('twoName').disabled = false;
+        document.getElementById('twoNum').disabled = false;
+        document.getElementById('twoPer').disabled = false;
+        document.getElementById('twoAll').disabled = false;
+        document.getElementById('twoLock').disabled = false;
+      }
+      
+      function twoAll() {
+        document.getElementById('dosppl').innerHTML = "";
+        rmtwoAmount = 0;
+      }
+      
+      function threeName() {
+        if (threePpl.value !== "" && rmthreeAmount < 4) {
+        rmthreeAmount++;
+        var threeppl = document.getElementById('threePpl').value;
+        document.getElementById('threePpl').value = "";
+        var ol = document.getElementsByTagName('ol')[2];
+        var newLi = document.createElement('li');
+        var newText = document.createTextNode(threeppl);
+        newLi.appendChild(newText);
+        ol.appendChild(newLi);
+        document.rmThree.appendChild(ol);
+        }
+        else if (threePpl.value !== "" && rmthreeAmount > 3) {
+          window.alert("Room is full");
+        }
+      }
+      
+      function threePer() {
+        var threeNum = document.getElementById('threeNum').value;
+        var threeAmnt = +rmoneAmount + +rmtwoAmount + +threeNum;
+        var getLi = document.getElementsByTagName('li')[threeAmnt - 1];
+        var getParent = getLi.parentNode;
+        getParent.removeChild(getLi);
+        rmthreeAmount--;
+      }
+      
+      function threeLock() {
+        document.getElementById('threePpl').disabled = true;
+        document.getElementById('threeName').disabled = true;
+        document.getElementById('threeNum').disabled = true;
+        document.getElementById('threePer').disabled = true;
+        document.getElementById('threeAll').disabled = true;
+        document.getElementById('threeLock').disabled = true;
+      }
+      
+      function threeUnlock() {
+        document.getElementById('threePpl').disabled = false;
+        document.getElementById('threeName').disabled = false;
+        document.getElementById('threeNum').disabled = false;
+        document.getElementById('threePer').disabled = false;
+        document.getElementById('threeAll').disabled = false;
+        document.getElementById('threeLock').disabled = false;
+      }
+      
+      function threeAll() {
+        document.getElementById('tresppl').innerHTML = "";
+        rmthreeAmount = 0;
+      }
+      
+      function fourName() {
+        if (fourPpl.value !== "" && rmfourAmount < 4) {
+        rmfourAmount++;
+        var fourppl = document.getElementById('fourPpl').value;
+        document.getElementById('fourPpl').value = "";
+        var ol = document.getElementsByTagName('ol')[3];
+        var newLi = document.createElement('li');
+        var newText = document.createTextNode(fourppl);
+        newLi.appendChild(newText);
+        ol.appendChild(newLi);
+        document.rmFour.appendChild(ol);
+        }
+        else if (fourPpl.value !== "" && rmfourAmount > 3) {
+          window.alert("Room is full");
+        }
+      }
+      
+      function fourPer() {
+        var fourNum = document.getElementById('fourNum').value;
+        var fourAmnt = +rmoneAmount + +rmtwoAmount + +rmthreeAmount + +fourNum;
+        var getLi = document.getElementsByTagName('li')[fourAmnt - 1];
+        var getParent = getLi.parentNode;
+        getParent.removeChild(getLi);
+        rmfourAmount--;
+      }
+      
+      function fourLock() {
+        document.getElementById('fourPpl').disabled = true;
+        document.getElementById('fourName').disabled = true;
+        document.getElementById('fourNum').disabled = true;
+        document.getElementById('fourPer').disabled = true;
+        document.getElementById('fourAll').disabled = true;
+        document.getElementById('fourLock').disabled = true;
+      }
+      
+      function fourUnlock() {
+        document.getElementById('fourPpl').disabled = false;
+        document.getElementById('fourName').disabled = false;
+        document.getElementById('fourNum').disabled = false;
+        document.getElementById('fourPer').disabled = false;
+        document.getElementById('fourAll').disabled = false;
+        document.getElementById('fourLock').disabled = false;
+      }
+      
+      function fourAll() {
+        document.getElementById('cuatroppl').innerHTML = "";
+        rmfourAmount = 0;
+      }
+      
+      function fiveName() {
+        if (fivePpl.value !== "" && rmfiveAmount < 4) {
+        rmfiveAmount++;
+        var fiveppl = document.getElementById('fivePpl').value;
+        document.getElementById('fivePpl').value = "";
+        var ol = document.getElementsByTagName('ol')[4];
+        var newLi = document.createElement('li');
+        var newText = document.createTextNode(fiveppl);
+        newLi.appendChild(newText);
+        ol.appendChild(newLi);
+        document.rmFive.appendChild(ol);
+        }
+        else if (fivePpl.value !== "" && rmfiveAmount > 3) {
+          window.alert("Room is full");
+        }
+      }
+      
+      function fivePer() {
+        var fiveNum = document.getElementById('fiveNum').value;
+        var fiveAmnt = +rmoneAmount + +rmtwoAmount + +rmthreeAmount + +rmfourAmount + +fiveNum;
+        var getLi = document.getElementsByTagName('li')[fiveAmnt - 1];
+        var getParent = getLi.parentNode;
+        getParent.removeChild(getLi);
+        rmfiveAmount--;
+      }
+      
+      function fiveLock() {
+        document.getElementById('fivePpl').disabled = true;
+        document.getElementById('fiveName').disabled = true;
+        document.getElementById('fiveNum').disabled = true;
+        document.getElementById('fivePer').disabled = true;
+        document.getElementById('fiveAll').disabled = true;
+        document.getElementById('fiveLock').disabled = true;
+      }
+      
+      function fiveUnlock() {
+        document.getElementById('fivePpl').disabled = false;
+        document.getElementById('fiveName').disabled = false;
+        document.getElementById('fiveNum').disabled = false;
+        document.getElementById('fivePer').disabled = false;
+        document.getElementById('fiveAll').disabled = false;
+        document.getElementById('fiveLock').disabled = false;
+      }
+      
+      function fiveAll() {
+        document.getElementById('cincoppl').innerHTML = "";
+        rmfiveAmount = 0;
+      }
+      
+      function sixName() {
+        if (sixPpl.value !== "" && rmsixAmount < 4) {
+        rmsixAmount++;
+        var sixppl = document.getElementById('sixPpl').value;
+        document.getElementById('sixPpl').value = "";
+        var ol = document.getElementsByTagName('ol')[5];
+        var newLi = document.createElement('li');
+        var newText = document.createTextNode(sixppl);
+        newLi.appendChild(newText);
+        ol.appendChild(newLi);
+        document.rmSix.appendChild(ol);
+        }
+        else if (sixPpl.value !== "" && rmsixAmount > 3) {
+          window.alert("Room is full");
+        }
+      }
+      
+      function sixPer() {
+        var sixNum = document.getElementById('sixNum').value;
+        var sixAmnt = +rmoneAmount + +rmtwoAmount + +rmthreeAmount + +rmfourAmount + +rmfiveAmount + +sixNum;
+        var getLi = document.getElementsByTagName('li')[sixAmnt - 1];
+        var getParent = getLi.parentNode;
+        getParent.removeChild(getLi);
+        rmsixAmount--;
+      }
+      
+      function sixLock() {
+        document.getElementById('sixPpl').disabled = true;
+        document.getElementById('sixName').disabled = true;
+        document.getElementById('sixNum').disabled = true;
+        document.getElementById('sixPer').disabled = true;
+        document.getElementById('sixAll').disabled = true;
+        document.getElementById('sixLock').disabled = true;
+      }
+      
+      function sixUnlock() {
+        document.getElementById('sixPpl').disabled = false;
+        document.getElementById('sixName').disabled = false;
+        document.getElementById('sixNum').disabled = false;
+        document.getElementById('sixPer').disabled = false;
+        document.getElementById('sixAll').disabled = false;
+        document.getElementById('sixLock').disabled = false;
+      }
+      
+      function sixAll() {
+        document.getElementById('seisppl').innerHTML = "";
+        rmsixAmount = 0;
+      }
     </script>
   </body>
 </html>
