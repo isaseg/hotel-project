@@ -11,30 +11,45 @@
         color: #317873;
         background-color: #a0d6b4;
       }
+      #guestLog {
+        margin-left: 45%;
+        margin-top: 1%;
+      }
       #rmOne {
         margin-top: 0%;
         margin-left: 5%;
-        opacity: 1;
+        opacity: 0.9;
+        padding-left: 5px;
       }
       #rmTwo {
         margin-top: -23.8%;
         margin-left: 40%;
+        opacity: 0.9;
+        padding-left: 5px;
       }
       #rmThree {
         margin-top: -23.8%;
         margin-left: 76%;
+        opacity: 0.9;
+        padding-left: 5px;
       }
       #rmFour {
         margin-top: 0%;
         margin-left: 5%;
+        opacity: 0.9;
+        padding-left: 5px;
       }
       #rmFive {
         margin-top: -23.8%;
         margin-left: 40%;
+        opacity: 0.9;
+        padding-left: 5px;
       }
       #rmSix {
         margin-top: -23.8%;
         margin-left: 76%;
+        opacity: 0.9;
+        padding-left: 5px;
       }
       #onePpl {
         width: 125px;
@@ -88,12 +103,16 @@
         margin-right: 40%;
         margin-top: -5%;
       }
+      button:hover {
+        background-color: #a0d6b4;
+        color: #317873;
+      }
     </style>
   </head>
   <body>
     <div id="logo">SH</div>
     <div id="title"><h1>Segawa Hotel</h1></div>
-    <button onclick="guestLog()">Guest Log</button>
+    <button onclick="guestLog()" id="guestLog">Guest Log</button>
     <div id="rmOne">
       <h1>Room One</h1>
       <input type="text" id="onePpl">
